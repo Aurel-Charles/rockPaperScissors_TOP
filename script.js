@@ -103,5 +103,24 @@ let roundResult = playRound(humanSelection, computerSelection)
 console.log("Result: " + roundResult);
 
 
-// increment score using round result
+// increment score based on round result
 
+let win = roundResult.startsWith("You win!") // if rou
+console.log(win);
+
+let tie = roundResult.startsWith("It's a tie")
+console.log(tie);
+
+if (tie) {
+ 
+}
+else if (win) {
+ humanScore++    
+}
+else {
+  computerScore++
+}
+
+
+console.log("Your score is: " + humanScore);
+console.log("Computer score is: " + computerScore);
