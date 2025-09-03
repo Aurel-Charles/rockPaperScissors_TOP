@@ -16,23 +16,92 @@ function getComputerChoice() {
 }
 
 
-console.log("The computer choosed: " + getComputerChoice());
+
 
 
 
 // Dertermined the human Choice
 
 function getHumanChoice() {
-    let askChoice =  window.prompt("Rock? Paper? or Scissors?") 
-    console.log("You chosed: " +  askChoice);
-    
+    let Choice =  window.prompt("Rock? Paper? or Scissors?")
+    return Choice   
 } 
 
-getHumanChoice()
 
 // compare the computer with the human Choice
 
 let humanScore = 0
 let computerScore = 0
 
+
+
+//Write the logic to play a single round
+
+function playRound(humanChoice, computerChoice) {
+    humanChoice = humanChoice.toLowerCase()
+    
+    switch (humanChoice) {
+        case "rock":
+            if (humanChoice === computerChoice) {
+                return "It's a tie, play again"
+            }
+            else if (humanChoice  && computerChoice === "paper" ) {
+                return "You lost! Paper wrap the Rock "
+            }
+            else if (humanChoice  && computerChoice === "scissors" ) {
+                return "You win!  Rock brakes Scissors"
+            }
+            
+            break;
+    
+        case "paper":
+            if (humanChoice === computerChoice) {
+                return "It's a tie, play again"
+            }
+            else if (humanChoice && computerChoice === "rock" ) {
+                return "You win! Paper wrap the Rock "
+            }
+            else if (humanChoice && computerChoice === "scissors" ) {
+                return "You lost! Scissors cut Paper"
+            }
+            
+            break;
+        
+        case "scissors":
+            if (humanChoice === computerChoice) {
+                return "It's a tie, play again"
+            }
+            else if (humanChoice && computerChoice === "rock" ) {
+                return "You lost! Rock brakes Scissors"
+            }
+            else if (humanChoice && computerChoice === "paper" ) {
+                return "You win! Scissors cut paper "
+            }
+            
+            break;
+    
+        default:
+            return "You typed something wrong"
+            break;
+    }
+
+} 
+
+
+
+// compare humanChoice and computerChoice with the function play round
+
+const humanSelection = getHumanChoice();
+console.log("You chosed: " + humanSelection);
+
+const computerSelection = getComputerChoice();
+console.log("The computer chosed: " +  computerSelection);
+
+
 // show the result
+let roundResult = playRound(humanSelection, computerSelection)
+console.log("Result: " + roundResult);
+
+
+// increment score using round result
+
