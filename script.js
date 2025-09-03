@@ -1,11 +1,10 @@
 
-// Dertermined the computer Choice
 
 function getComputerChoice() {
-    let number = (Math.floor(Math.random() * 3) + 1) //get a ramdom number between 0 and "max" 
+    let number = (Math.floor(Math.random() * 3) + 1) //get a ramdom number between 0 and "3" 
 
     if (number === 1) {
-        return "rock" //transforme a number into. a string choice (1 > rock)
+        return "rock" 
     }  
     if (number === 2) {
         return "paper"
@@ -18,17 +17,15 @@ function getComputerChoice() {
 
 
 
-
-
-// Dertermined the human Choice
-
 function getHumanChoice() {
     let Choice =  window.prompt("Rock? Paper? or Scissors?")
     return Choice   
 } 
 
 
-// declare score
+
+
+
 
 let humanScore = 0
 let computerScore = 0
