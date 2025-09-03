@@ -121,8 +121,8 @@ function playGame() {
     }
     
     
-    console.log("Your score is: " + humanScore);
-    console.log("Computer score is: " + computerScore);
+    console.log("Your score is: " + humanScore + ", Computer score is: " + computerScore);
+
 }
 
 
