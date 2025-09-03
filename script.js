@@ -1,7 +1,7 @@
 
 
 function getComputerChoice() {
-    let number = (Math.floor(Math.random() * 3) + 1) //get a ramdom number between 0 and "3" 
+    let number = (Math.floor(Math.random() * 3) + 1) //formul to get a ramdom number between 0 and "3" 
 
     if (number === 1) {
         return "rock" 
@@ -33,10 +33,6 @@ let computerScore = 0
 
 function playGame() {
     
-    
-    
-    
-    //Write the logic to play a single round
     
     function playRound(humanChoice, computerChoice) {
         humanChoice = humanChoice.toLowerCase()
@@ -89,7 +85,7 @@ function playGame() {
     } 
     
     
-    // compare humanChoice and computerChoice with the function play round
+    // compare and log humanChoice computerChoice  and the result with the function playRound()
     
     const humanSelection = getHumanChoice();
     console.log("You chosed: " + humanSelection);
@@ -98,7 +94,6 @@ function playGame() {
     console.log("The computer chosed: " +  computerSelection);
     
     
-    // show the result
     let roundResult = playRound(humanSelection, computerSelection)
     console.log("Result: " + roundResult);
     
@@ -117,8 +112,8 @@ function playGame() {
       computerScore++
     }
     
-    
-    console.log("Your score is: " + humanScore + ", Computer score is: " + computerScore);
+    let totalScore = "Your score is: " + humanScore + ", Computer score is: " + computerScore
+    console.log(totalScore);
 
 }
 
