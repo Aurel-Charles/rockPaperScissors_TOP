@@ -28,99 +28,106 @@ function getHumanChoice() {
 } 
 
 
-// compare the computer with the human Choice
+// declare score
 
 let humanScore = 0
 let computerScore = 0
 
 
-
-//Write the logic to play a single round
-
-function playRound(humanChoice, computerChoice) {
-    humanChoice = humanChoice.toLowerCase()
+function playGame() {
     
-    switch (humanChoice) {
-        case "rock":
-            if (humanChoice === computerChoice) {
-                return "It's a tie, play again"
-            }
-            else if (humanChoice  && computerChoice === "paper" ) {
-                return "You lost! Paper wrap the Rock "
-            }
-            else if (humanChoice  && computerChoice === "scissors" ) {
-                return "You win!  Rock brakes Scissors"
-            }
-            
-            break;
     
-        case "paper":
-            if (humanChoice === computerChoice) {
-                return "It's a tie, play again"
-            }
-            else if (humanChoice && computerChoice === "rock" ) {
-                return "You win! Paper wrap the Rock "
-            }
-            else if (humanChoice && computerChoice === "scissors" ) {
-                return "You lost! Scissors cut Paper"
-            }
-            
-            break;
+    
+    
+    //Write the logic to play a single round
+    
+    function playRound(humanChoice, computerChoice) {
+        humanChoice = humanChoice.toLowerCase()
         
-        case "scissors":
-            if (humanChoice === computerChoice) {
-                return "It's a tie, play again"
-            }
-            else if (humanChoice && computerChoice === "rock" ) {
-                return "You lost! Rock brakes Scissors"
-            }
-            else if (humanChoice && computerChoice === "paper" ) {
-                return "You win! Scissors cut paper "
-            }
+        switch (humanChoice) {
+            case "rock":
+                if (humanChoice === computerChoice) {
+                    return "It's a tie, play again"
+                }
+                else if (humanChoice  && computerChoice === "paper" ) {
+                    return "You lost! Paper wrap the Rock "
+                }
+                else if (humanChoice  && computerChoice === "scissors" ) {
+                    return "You win!  Rock brakes Scissors"
+                }
+                
+                break;
+        
+            case "paper":
+                if (humanChoice === computerChoice) {
+                    return "It's a tie, play again"
+                }
+                else if (humanChoice && computerChoice === "rock" ) {
+                    return "You win! Paper wrap the Rock "
+                }
+                else if (humanChoice && computerChoice === "scissors" ) {
+                    return "You lost! Scissors cut Paper"
+                }
+                
+                break;
             
-            break;
+            case "scissors":
+                if (humanChoice === computerChoice) {
+                    return "It's a tie, play again"
+                }
+                else if (humanChoice && computerChoice === "rock" ) {
+                    return "You lost! Rock brakes Scissors"
+                }
+                else if (humanChoice && computerChoice === "paper" ) {
+                    return "You win! Scissors cut paper "
+                }
+                
+                break;
+        
+            default:
+                return "You typed something wrong"
+                break;
+        }
     
-        default:
-            return "You typed something wrong"
-            break;
+    } 
+    
+    
+    // compare humanChoice and computerChoice with the function play round
+    
+    const humanSelection = getHumanChoice();
+    console.log("You chosed: " + humanSelection);
+    
+    const computerSelection = getComputerChoice();
+    console.log("The computer chosed: " +  computerSelection);
+    
+    
+    // show the result
+    let roundResult = playRound(humanSelection, computerSelection)
+    console.log("Result: " + roundResult);
+    
+    
+    // increment score based on round result
+    
+    let win = roundResult.startsWith("You win!") // determine if you win or not
+    let tie = roundResult.startsWith("It's a tie")// determine if it's a tie
+    
+    if (tie) {
     }
-
-} 
-
-
-
-// compare humanChoice and computerChoice with the function play round
-
-const humanSelection = getHumanChoice();
-console.log("You chosed: " + humanSelection);
-
-const computerSelection = getComputerChoice();
-console.log("The computer chosed: " +  computerSelection);
-
-
-// show the result
-let roundResult = playRound(humanSelection, computerSelection)
-console.log("Result: " + roundResult);
-
-
-// increment score based on round result
-
-let win = roundResult.startsWith("You win!") // if rou
-console.log(win);
-
-let tie = roundResult.startsWith("It's a tie")
-console.log(tie);
-
-if (tie) {
- 
-}
-else if (win) {
- humanScore++    
-}
-else {
-  computerScore++
+    else if (win) {
+     humanScore++    
+    }
+    else {
+      computerScore++
+    }
+    
+    
+    console.log("Your score is: " + humanScore);
+    console.log("Computer score is: " + computerScore);
 }
 
 
-console.log("Your score is: " + humanScore);
-console.log("Computer score is: " + computerScore);
+playGame()
+playGame()
+playGame()
+playGame()
+playGame()
