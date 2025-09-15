@@ -15,32 +15,6 @@ function getComputerChoice() {
 }
 
 
-
-
-
-
-
-let humanScore = 0
-let computerScore = 0
-
-
-function playGame() {
-    
-    
-    
-    // compare and log humanChoice computerChoice  and the result with the function playRound()
-    // Game start here
-
-
-
-
-}
-
-////
-////
-////
-
-
 function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase()
     
@@ -112,13 +86,35 @@ function updateScore(roundResult) {
     console.log(totalScore);
     return totalScore
 }
-    
+
+function checkWinner() {
+    if (humanScore == 5) {
+        console.log('you WIN the GAME');
+        score.classList= 'win'
+        score.textContent = 'Congratulation!! you WIN the GAME'
+        humanScore = 0
+        computerScore = 0
+    }
+    else if (computerScore == 5) {
+        console.log('you LOST the GAME');
+                score.classList= 'lose'
+        score.textContent = ' You LOST the GAME! Try Again'
+        humanScore = 0
+        computerScore = 0
+    }
+    else {score.classList= ''}
+}
+
+  ////                function                ////
+ ////////////////////////////////////////////////
+////                game                    ////
+
+let humanScore = 0
+let computerScore = 0
 
 const scoreBox = document.querySelector('#score')
 const roundScore = document.createElement('p')
 const score  = document.createElement('p')
-
-
 
 
 const btnRock = document.querySelector('#rock')
@@ -129,7 +125,7 @@ btnRock.addEventListener('click', ()=>  {
     scoreBox.appendChild(roundScore)
     score.textContent = updateScore(roundResult);
     scoreBox.appendChild(score)
-
+    checkWinner()
 
 })
 
@@ -141,6 +137,7 @@ btnPaper.addEventListener('click', ()=> {
     scoreBox.appendChild(roundScore)
     score.textContent = updateScore(roundResult);
     scoreBox.appendChild(score)
+    checkWinner()
 })
 
 const btnScissors = document.querySelector('#scissors')
@@ -151,9 +148,5 @@ btnScissors.addEventListener('click', ()=> {
     scoreBox.appendChild(roundScore)
     score.textContent = updateScore(roundResult);
     scoreBox.appendChild(score)
+    checkWinner()
 })
-
-
-
- 
-
