@@ -32,34 +32,7 @@ function playGame() {
     // Game start here
 
 
-    
-    const humanSelection = getHumanChoice();
-    console.log("You chosed: " + humanSelection);
-    
-    const computerSelection = getComputerChoice();
-    console.log("The computer chosed: " +  computerSelection);
-    
-    
-    let roundResult = playRound(humanSelection, computerSelection)
-    console.log("Result: " + roundResult);
-    
-    
-    // increment score based on round result
-    
-    let win = roundResult.startsWith("You win!") // determine if you win or not
-    let tie = roundResult.startsWith("It's a tie")// determine if it's a tie
-    
-    if (tie) {
-    }
-    else if (win) {
-     humanScore++    
-    }
-    else {
-      computerScore++
-    }
-    
-    let totalScore = "Your score is: " + humanScore + ", Computer score is: " + computerScore
-    console.log(totalScore);
+
 
 }
 
@@ -137,8 +110,13 @@ function updateScore(roundResult) {
     
     let totalScore = "Your score is: " + humanScore + ", Computer score is: " + computerScore
     console.log(totalScore);
+    return totalScore
 }
     
+
+const scoreBox = document.querySelector('#score')
+const roundScore = document.createElement('p')
+const score  = document.createElement('p')
 
 
 
@@ -147,19 +125,35 @@ const btnRock = document.querySelector('#rock')
 btnRock.addEventListener('click', ()=>  {
     const computerSelection = getComputerChoice();
     let roundResult = playRound("rock", computerSelection)
-    console.log(roundResult);
-    updateScore(roundResult);
+    roundScore.textContent = roundResult
+    scoreBox.appendChild(roundScore)
+    score.textContent = updateScore(roundResult);
+    scoreBox.appendChild(score)
+
 
 })
 
 const btnPaper = document.querySelector('#paper')
+btnPaper.addEventListener('click', ()=> {
+    const computerSelection = getComputerChoice();
+    let roundResult = playRound("paper", computerSelection)
+    roundScore.textContent = roundResult
+    scoreBox.appendChild(roundScore)
+    score.textContent = updateScore(roundResult);
+    scoreBox.appendChild(score)
+})
 
 const btnScissors = document.querySelector('#scissors')
+btnScissors.addEventListener('click', ()=> {
+    const computerSelection = getComputerChoice();
+    let roundResult = playRound("scissors", computerSelection)
+    roundScore.textContent = roundResult
+    scoreBox.appendChild(roundScore)
+    score.textContent = updateScore(roundResult);
+    scoreBox.appendChild(score)
+})
 
 
-function getHumanChoice() {
-    let Choice =  window.prompt("Rock? Paper? or Scissors?")
-    return Choice   
-} 
 
+ 
 
