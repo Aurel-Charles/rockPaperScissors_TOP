@@ -86,6 +86,7 @@ function playGame() {
     
     
     // compare and log humanChoice computerChoice  and the result with the function playRound()
+    // Game start here
     
     const humanSelection = getHumanChoice();
     console.log("You chosed: " + humanSelection);
@@ -118,8 +119,4 @@ function playGame() {
 }
 
 
-playGame()
-playGame()
-playGame()
-playGame()
 playGame()
