@@ -91,14 +91,14 @@ function checkWinner() {
     if (humanScore == 5) {
         console.log('you WIN the GAME');
         score.classList= 'win'
-        score.textContent = 'Congratulation!! you WIN the GAME'
+        score.textContent = `Congratulation!! You WIN the GAME ${humanScore}-${computerScore}`
         humanScore = 0
         computerScore = 0
     }
     else if (computerScore == 5) {
         console.log('you LOST the GAME');
                 score.classList= 'lose'
-        score.textContent = ' You LOST the GAME! Try Again'
+        score.textContent = `You LOST the GAME ${humanScore}-${computerScore} ! Try Again`
         humanScore = 0
         computerScore = 0
     }
